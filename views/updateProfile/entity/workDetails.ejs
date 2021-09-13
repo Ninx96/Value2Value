@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../../components/head') %>
+
+  <body class="gray">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <%- include('../../components/header') %>
+
+      <!-- Dashboard Container -->
+      <div class="dashboard-container">
+        <!-- Dashboard Content
+	================================================== -->
+        <div class="dashboard-content-container" data-simplebar>
+          <div class="dashboard-content-inner">
+            <!-- Dashboard Headline -->
+            <div class="dashboard-headline">
+              <!-- <h3>Personal Details</h3> -->
+
+              <!-- Breadcrumbs -->
+              <nav id="breadcrumbs" class="dark">
+                <ul>
+                  <li><a href="#">Profile</a></li>
+                  <li><a href="#">Update</a></li>
+                  <li>Professional Details</li>
+                </ul>
+              </nav>
+            </div>
+
+            <!-- Progress Steps -->
+            <div class="container margin-bottom-55">
+              <ul class="progressbar">
+                <li class="active">Entity Details</li>
+                <li class="active">Personal Details</li>
+                <li class="active">Professional Details</li>
+                <li class="active">Valuation Details</li>
+                <li>Work Experience</li>
+              </ul>
+            </div>
+            <!-- Progress / End -->
+
+            <!-- Row -->
+            <div class="row">
+              <!-- Dashboard Box -->
+              <div class="col-xl-10 offset-xl-1">
+                <div class="dashboard-box margin-top-0">
+                  <!-- Headline -->
+                  <div class="headline">
+                    <h3>
+                      <i class="icon-feather-folder-plus"></i> Work Experience
+                      Form
+                    </h3>
+                  </div>
+
+                  <div class="content with-padding padding-bottom-10">
+                    <div class="row">
+                      <div class="col-xl-6 offset-xl-2">
+                        <div class="submit-field">
+                          <h5>
+                            Are you registration with CBDT under Wealth Tax Act,
+                            1957
+                          </h5>
+                        </div>
+                      </div>
+
+                      <div class="col-xl-1">
+                        <div class="checkbox">
+                          <input type="checkbox" id="chekcbox1" checked />
+                          <label for="chekcbox1"
+                            ><span class="checkbox-icon"></span> Yes</label
+                          >
+                        </div>
+                      </div>
+
+                      <div class="col-xl-1">
+                        <div class="checkbox">
+                          <input type="checkbox" id="chekcbox2" />
+                          <label for="chekcbox2"
+                            ><span class="checkbox-icon"></span> No</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-4 offset-xl-2">
+                        <div class="submit-field">
+                          <h5>Registration Number</h5>
+                          <input
+                            type="text"
+                            class="with-border"
+                            placeholder="e.g. build me a website"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="submit-field">
+                          <h5>Date of Registration</h5>
+                          <input
+                            type="text"
+                            class="with-border"
+                            placeholder="e.g. build me a website"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6 offset-xl-2">
+                        <div class="submit-field">
+                          <h5>
+                            Number of years in practice or of work experience in
+                            the relevant profession or in valuation
+                          </h5>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2">
+                        <div class="submit-field">
+                          <input
+                            type="text"
+                            class="with-border"
+                            placeholder="e.g. build me a website"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xl-6 offset-xl-2">
+                        <div class="submit-field">
+                          <h5>Are you presently in practice / employment?</h5>
+                        </div>
+                      </div>
+
+                      <div class="col-xl-1">
+                        <div class="checkbox">
+                          <input type="checkbox" id="chekcbox1" checked />
+                          <label for="chekcbox1"
+                            ><span class="checkbox-icon"></span> Yes</label
+                          >
+                        </div>
+                      </div>
+
+                      <div class="col-xl-1">
+                        <div class="checkbox">
+                          <input type="checkbox" id="chekcbox2" />
+                          <label for="chekcbox2"
+                            ><span class="checkbox-icon"></span> No</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="content with-padding padding-bottom-10">
+                    <table class="basic-table">
+                      <tr>
+                        <th>Employment / Practice</th>
+                        <th>If employed, Name of Employer and Designation</th>
+                        <th>
+                          If in practice, experience in the relevant profession/
+                          valuation
+                        </th>
+                        <th>Valuation Sector</th>
+                        <th>Specialization</th>
+                        <th>Remark If any</th>
+                        <th style="width: 100px">
+                          <button
+                            type="button"
+                            class="button gray ripple-effect"
+                            onclick="addRow(this)"
+                          >
+                            <i class="icon-material-outline-add"></i>
+                          </button>
+                        </th>
+                      </tr>
+
+                      <tr>
+                        <td data-label="Column 1">Item</td>
+                        <td data-label="Column 2">Description</td>
+                        <td data-label="Column 3">Description</td>
+                        <td data-label="Column 1">Item</td>
+                        <td data-label="Column 2">Description</td>
+                        <td data-label="Column 2">Description</td>
+                        <td style="width: 100px">
+                          <i
+                            class="
+                              icon-material-outline-highlight-off
+                              ripple-effect
+                            "
+                            onclick="removeRow(this)"
+                            style="font-size: x-large"
+                          ></i>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- Button -->
+              <div class="col-xl-10 offset-xl-1 d-flex flex-row">
+                <a
+                  href="valuation"
+                  class="button ripple-effect big margin-top-30"
+                  style="background-color: #f7315d"
+                  >Previous</a
+                >
+
+                <a
+                  href="#"
+                  class="button ripple-effect big margin-top-30"
+                  style="margin-left: auto; background-color: #f7315d"
+                  >Save & Next</a
+                >
+              </div>
+              <!-- Button / End -->
+            </div>
+            <!-- Row / End -->
+
+            <%- include('../../components/footerDashboard') %>
+          </div>
+        </div>
+        <!-- Dashboard Content / End -->
+      </div>
+      <!-- Dashboard Container / End -->
+    </div>
+    <!-- Wrapper / End -->
+
+    <script>
+      function addRow(elem) {
+        const table = $(elem).parent().parent();
+        $(table).after(` <tr>
+                        <td data-label="Column 1">Item</td>
+                        <td data-label="Column 2">Description</td>
+                        <td data-label="Column 3">Description</td>
+                        <td data-label="Column 1">Item</td>
+                        <td data-label="Column 2">Description</td>
+                        <td data-label="Column 2">Description</td>
+                        <td style="width: 100px">
+                          <i
+                            class="
+                              icon-material-outline-highlight-off
+                              ripple-effect
+                            "
+                            onclick="removeRow(this)"
+                            style="font-size: x-large"
+                          ></i>
+                        </td>
+                      </tr>`);
+      }
+      function removeRow(elem) {
+        const row = $(elem).parent().parent();
+        $(row).remove();
+      }
+    </script>
+
+    <%- include('../../components/scripts') %>
+  </body>
+</html>

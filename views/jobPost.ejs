@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./components/head') %>
+
+  <body class="gray">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <%- include('./components/header') %>
+
+      <!-- Dashboard Container -->
+      <div class="dashboard-container">
+        <!-- Dashboard Content
+	================================================== -->
+        <div class="dashboard-content-container" data-simplebar>
+          <div class="dashboard-content-inner">
+            <!-- Dashboard Headline -->
+            <div class="dashboard-headline col-xl-6 offset-xl-3">
+              <h3>Post a Job</h3>
+
+              <!-- Breadcrumbs -->
+              <nav id="breadcrumbs" class="dark">
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Dashboard</a></li>
+                  <li>Post a Job</li>
+                </ul>
+              </nav>
+            </div>
+
+            <!-- Row -->
+            <div class="row">
+              <!-- Dashboard Box -->
+              <div class="col-xl-6 offset-xl-3">
+                <div class="dashboard-box margin-top-0">
+                  <!-- Headline -->
+                  <div class="headline">
+                    <h3>
+                      <i class="icon-feather-folder-plus"></i> Job Submission
+                      Form
+                    </h3>
+                  </div>
+
+                  <div class="content with-padding padding-bottom-10">
+                    <form>
+                      <!-- Job title -->
+                      <div class="row">
+                        <div class="col-xl-12">
+                          <div class="submit-field">
+                            <h5>Job Title</h5>
+                            <input type="text" class="with-border" />
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12">
+                          <div class="submit-field">
+                            <h5>Job Description</h5>
+                            <textarea
+                              cols="30"
+                              rows="5"
+                              class="with-border"
+                            ></textarea>
+                            <div class="uploadButton margin-top-30">
+                              <input
+                                class="uploadButton-input"
+                                type="file"
+                                accept="image/*, application/pdf"
+                                id="upload"
+                                multiple
+                              />
+                              <label
+                                class="uploadButton-button ripple-effect"
+                                for="upload"
+                                >Upload Files</label
+                              >
+                              <span class="uploadButton-file-name"
+                                >Images or documents that might be helpful in
+                                describing your job</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+
+                        <div id="btn_job" class="col-xl-12">
+                          <a
+                            href="#"
+                            class="button ripple-effect big margin-top-25"
+                            >Next</a
+                          >
+                        </div>
+                      </div>
+                      <!-- Skill Requirement -->
+                      <div id="div_skill" class="row mfp-hide">
+                        <div class="col-xl-12 col-md-12">
+                          <div class="section-headline">
+                            <h5>What skills are required ?</h5>
+                          </div>
+
+                          <div class="keywords-container">
+                            <div class="keyword-input-container">
+                              <select
+                                class="selectpicker keyword-input margin-top-12"
+                                data-live-search="true"
+                              >
+                                <option>Web Development</option>
+                                <option>Mongo DB</option>
+                                <option>SQL</option>
+                              </select>
+
+                              <button
+                                class="keyword-input-button ripple-effect"
+                              >
+                                <i class="icon-material-outline-add"></i>
+                              </button>
+                            </div>
+                            <div class="keywords-list margin-top-10">
+                              <!-- keywords go here -->
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+                        </div>
+
+                        <div id="btn_skill" class="col-xl-12">
+                          <a
+                            href="#"
+                            class="button ripple-effect big margin-top-25"
+                            >Next</a
+                          >
+                        </div>
+                      </div>
+                      <!-- Criteria -->
+                      <div id="div_criteria" class="row margin-top-30 mfp-hide">
+                        <div class="col-xl-6">
+                          <div class="submit-field">
+                            <h5>Preffered Location of the Client</h5>
+                            <select
+                              class="selectpicker with-border"
+                              data-size="7"
+                              title="Select Job Type"
+                            >
+                              <option>Full Time</option>
+                              <option>Freelance</option>
+                              <option>Part Time</option>
+                              <option>Internship</option>
+                              <option>Temporary</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-6">
+                          <div class="submit-field">
+                            <h5>Asset Class</h5>
+                            <select
+                              class="selectpicker with-border"
+                              data-size="7"
+                              title="Select Job Type"
+                            >
+                              <option>Full Time</option>
+                              <option>Freelance</option>
+                              <option>Part Time</option>
+                              <option>Internship</option>
+                              <option>Temporary</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-6">
+                          <div class="submit-field">
+                            <h5>Qualification</h5>
+                            <select
+                              class="selectpicker with-border"
+                              data-size="7"
+                              title="Select Job Type"
+                            >
+                              <option>Full Time</option>
+                              <option>Freelance</option>
+                              <option>Part Time</option>
+                              <option>Internship</option>
+                              <option>Temporary</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-6">
+                          <div class="submit-field">
+                            <h5>Experience</h5>
+                            <select
+                              class="selectpicker with-border"
+                              data-size="7"
+                              title="Select Job Type"
+                            >
+                              <option>Full Time</option>
+                              <option>Freelance</option>
+                              <option>Part Time</option>
+                              <option>Internship</option>
+                              <option>Temporary</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div id="btn_criteria" class="col-xl-12">
+                          <a
+                            href="#"
+                            class="button ripple-effect big margin-top-25"
+                            >Next</a
+                          >
+                        </div>
+                      </div>
+                      <!-- Payment Type -->
+                      <div id="div_payment" class="row mfp-hide">
+                        <div class="col-md-12">
+                          <div class="submit-field">
+                            <h5>How do you want to pay?</h5>
+                            <div id="rad_payment" class="account-type">
+                              <div>
+                                <a class="button gray ripple-effect-dark">
+                                  Agree on a price and release payment when the
+                                  job is done
+                                </a>
+
+                                <input
+                                  type="radio"
+                                  name="payment-type-radio"
+                                  id="fixed-radio"
+                                  class="account-type-radio"
+                                  value="fixed"
+                                />
+                                <label
+                                  for="fixed-radio"
+                                  class="ripple-effect-dark"
+                                  ><i class="icon-material-outline-https"></i>
+                                  Pay Fixed Price</label
+                                >
+                              </div>
+
+                              <div>
+                                <a class="button gray ripple-effect-dark">
+                                  Hire based on an hourly rate and pay for hours
+                                  billed. Best for ongoing work
+                                </a>
+                                <input
+                                  type="radio"
+                                  name="payment-type-radio"
+                                  id="hourly-radio"
+                                  class="account-type-radio"
+                                  value="hourly"
+                                />
+                                <label
+                                  for="hourly-radio"
+                                  class="ripple-effect-dark"
+                                  ><i class="icon-feather-clock"></i> Pay
+                                  Hourly</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Estimnated Budget -->
+                      <div id="div_fixed" class="row mfp-hide">
+                        <div class="col-xl-12">
+                          <div class="submit-field">
+                            <h5>Whats your estimated Budget?</h5>
+                            <select
+                              class="selectpicker with-border"
+                              data-size="7"
+                              title="Select Fixed Amount"
+                            >
+                              <option>
+                                Micro Project (₹600.00 – 1,500.00 INR)
+                              </option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-xl-12">
+                          <a
+                            href="#"
+                            class="button ripple-effect big margin-top-30"
+                            >Yes, post my project
+                          </a>
+                        </div>
+                      </div>
+                      <div id="div_hourly" class="row mfp-hide">
+                        <div class="col-xl-12">
+                          <div class="submit-field">
+                            <h5>Whats your estimated Budget?</h5>
+                            <select
+                              class="selectpicker with-border"
+                              data-size="7"
+                              title="Select Hourly Rate"
+                            >
+                              <option>
+                                Basic (₹100.00 – 400.00 INR per hour)
+                              </option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12">
+                          <a
+                            href="#"
+                            class="button ripple-effect big margin-top-30"
+                            >Yes, post my project
+                          </a>
+                        </div>
+                      </div>
+                      <!-- Form End -->
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row / End -->
+
+            <%- include('./components/footerDashboard') %>
+          </div>
+        </div>
+        <!-- Dashboard Content / End -->
+      </div>
+      <!-- Dashboard Container / End -->
+    </div>
+    <!-- Wrapper / End -->
+
+    <%- include('./components/scripts') %>
+
+    <script>
+      $(document).ready(function () {
+        $("#btn_job").on("click", function (event) {
+          $("#div_skill").removeClass("mfp-hide");
+          $("#btn_job").addClass("mfp-hide");
+        });
+
+        $("#btn_skill").on("click", function (event) {
+          $("#div_criteria").removeClass("mfp-hide");
+          $("#btn_skill").addClass("mfp-hide");
+        });
+
+        $("#btn_criteria").on("click", function (event) {
+          $("#div_payment").removeClass("mfp-hide");
+          $("#btn_criteria").addClass("mfp-hide");
+        });
+
+        $("#div_payment").on("click", function (event) {
+          value = event.target.value;
+          if (value == "fixed") {
+            $("#div_fixed").removeClass("mfp-hide");
+            $("#div_hourly").addClass("mfp-hide");
+            return;
+          }
+          if (value == "hourly") {
+            $("#div_hourly").removeClass("mfp-hide");
+            $("#div_fixed").addClass("mfp-hide");
+            return;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

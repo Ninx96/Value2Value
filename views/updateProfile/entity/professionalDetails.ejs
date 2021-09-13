@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../../components/head') %>
+
+  <body class="gray">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <%- include('../../components/header') %>
+
+      <!-- Dashboard Container -->
+      <div class="dashboard-container">
+        <!-- Dashboard Content
+	================================================== -->
+        <div class="dashboard-content-container" data-simplebar>
+          <div class="dashboard-content-inner">
+            <!-- Dashboard Headline -->
+            <div class="dashboard-headline">
+              <!-- <h3>Personal Details</h3> -->
+
+              <!-- Breadcrumbs -->
+              <nav id="breadcrumbs" class="dark">
+                <ul>
+                  <li><a href="#">Profile</a></li>
+                  <li><a href="#">Update</a></li>
+                  <li>Professional Details</li>
+                </ul>
+              </nav>
+            </div>
+
+            <!-- Progress Steps -->
+            <div class="container margin-bottom-55">
+              <ul class="progressbar">
+                <li class="active">Entity Details</li>
+                <li class="active">Personal Details</li>
+                <li class="">Professional Details</li>
+                <li class="">Valuation Details</li>
+                <li>Work Experience</li>
+              </ul>
+            </div>
+            <!-- Progress / End -->
+            <!-- Row -->
+            <div class="row">
+              <!-- Dashboard Box -->
+              <div class="col-xl-10 offset-xl-1">
+                <div class="dashboard-box margin-top-0">
+                  <!-- Headline -->
+                  <div class="headline">
+                    <h3>
+                      <i class="icon-feather-folder-plus"></i> Professional
+                      Details Form
+                    </h3>
+                  </div>
+
+                  <div class="content with-padding padding-bottom-10">
+                    <div class="section-headline margin-bottom-30">
+                      <h4>Personal Educational Qualifications</h4>
+                      <h5>
+                        (Please provide educational qualifications from
+                        bachelor’s degree onwards )
+                      </h5>
+                    </div>
+                    <table class="basic-table">
+                      <tr>
+                        <th>Educational Qualification</th>
+                        <th>Year of passing</th>
+                        <th>% Obtained</th>
+                        <th>Grade/Class</th>
+                        <th>Collage/ University</th>
+                        <th>Remark If any</th>
+                        <th style="width: 100px">
+                          <button
+                            type="button"
+                            class="button gray ripple-effect"
+                            onclick="addRow(this)"
+                          >
+                            <i class="icon-material-outline-add"></i>
+                          </button>
+                        </th>
+                      </tr>
+
+                      <tr>
+                        <td data-label="Column 1">Item</td>
+                        <td data-label="Column 2">Description</td>
+                        <td data-label="Column 3">Description</td>
+                        <td data-label="Column 1">Item</td>
+                        <td data-label="Column 2">Description</td>
+                        <td data-label="Column 3">Description</td>
+                        <td style="width: 100px">
+                          <i
+                            class="
+                              icon-material-outline-highlight-off
+                              ripple-effect
+                            "
+                            onclick="removeRow(this)"
+                            style="font-size: x-large"
+                          ></i>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <div class="section-headline margin-bottom-30">
+                      <h4>Professional Qualifications</h4>
+                    </div>
+                    <table class="basic-table">
+                      <tr>
+                        <th>Professional Qualification</th>
+                        <th>Institute/ Professional Body</th>
+                        <th>Membership No</th>
+                        <th>Date of enrolment</th>
+                        <th>Remark If any</th>
+                        <th style="width: 100px">
+                          <button
+                            type="button"
+                            class="button gray ripple-effect"
+                            onclick="addRow(this)"
+                          >
+                            <i class="icon-material-outline-add"></i>
+                          </button>
+                        </th>
+                      </tr>
+
+                      <tr>
+                        <td data-label="Column 1">Item</td>
+                        <td data-label="Column 2">Description</td>
+                        <td data-label="Column 3">Description</td>
+                        <td data-label="Column 1">Item</td>
+                        <td data-label="Column 2">Description</td>
+                        <td style="width: 100px">
+                          <i
+                            class="
+                              icon-material-outline-highlight-off
+                              ripple-effect
+                            "
+                            onclick="removeRow(this)"
+                            style="font-size: x-large"
+                          ></i>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- Button -->
+              <div class="col-xl-10 offset-xl-1 d-flex flex-row">
+                <a
+                  href="personal"
+                  class="button ripple-effect big margin-top-30"
+                  style="background-color: #f7315d"
+                  >Previous</a
+                >
+
+                <a
+                  href="valuation"
+                  class="button ripple-effect big margin-top-30"
+                  style="margin-left: auto; background-color: #f7315d"
+                  >Save & Next</a
+                >
+              </div>
+              <!-- Button / End -->
+            </div>
+            <!-- Row / End -->
+
+            <%- include('../../components/footerDashboard') %>
+          </div>
+        </div>
+        <!-- Dashboard Content / End -->
+      </div>
+      <!-- Dashboard Container / End -->
+    </div>
+    <!-- Wrapper / End -->
+
+    <script>
+      function addRow(elem) {
+        const table = $(elem).parent().parent();
+        $(table).after(` <tr>
+                        <td data-label="Column 1">Item</td>
+                        <td data-label="Column 2">Description</td>
+                        <td data-label="Column 3">Description</td>
+                        <td data-label="Column 1">Item</td>
+                        <td data-label="Column 2">Description</td>
+                        <td data-label="Column 2">Description</td>
+                        <td style="width: 100px">
+                          <i
+                            class="
+                              icon-material-outline-highlight-off
+                              ripple-effect
+                            "
+                            onclick="removeRow(this)"
+                            style="font-size: x-large"
+                          ></i>
+                        </td>
+                      </tr>`);
+      }
+      function removeRow(elem) {
+        const row = $(elem).parent().parent();
+        $(row).remove();
+      }
+    </script>
+
+    <%- include('../../components/scripts') %>
+  </body>
+</html>

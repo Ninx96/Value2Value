@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../../components/head') %>
+
+  <body class="gray">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <%- include('../../components/header') %>
+
+      <!-- Dashboard Container -->
+      <div class="dashboard-container">
+        <!-- Dashboard Content
+	================================================== -->
+        <div class="dashboard-content-container" data-simplebar>
+          <div class="dashboard-content-inner">
+            <!-- Dashboard Headline -->
+            <div class="dashboard-headline">
+              <!-- <h3>Personal Details</h3> -->
+
+              <!-- Breadcrumbs -->
+              <nav id="breadcrumbs" class="dark">
+                <ul>
+                  <li><a href="#">Profile</a></li>
+                  <li><a href="#">Update</a></li>
+                  <li>Professional Details</li>
+                </ul>
+              </nav>
+            </div>
+
+            <!-- Progress Steps -->
+            <div class="container margin-bottom-55">
+              <ul class="progressbar">
+                <li>Personal Details</li>
+                <li>Professional Details</li>
+                <li>Valuation Details</li>
+                <li>Work Experience</li>
+              </ul>
+            </div>
+            <!-- Progress / End -->
+
+            <!-- Row -->
+            <div class="row">
+              <!-- Dashboard Box -->
+              <div class="col-xl-10 offset-xl-1">
+                <div class="dashboard-box margin-top-0">
+                  <!-- Headline -->
+                  <div class="headline">
+                    <h3>
+                      <i class="icon-feather-folder-plus"></i> Personal Details
+                      Form
+                    </h3>
+                  </div>
+
+                  <div class="content with-padding padding-bottom-10">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="submit-field">
+                          <h5>Mobile Number</h5>
+                          <input
+                            type="text"
+                            class="with-border"
+                            placeholder="e.g. build me a website"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="submit-field">
+                          <h5>PAN Number</h5>
+                          <input
+                            type="text"
+                            class="with-border"
+                            placeholder="e.g. build me a website"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="submit-field">
+                          <h5>Asset class you registered in</h5>
+                          <select
+                            class="selectpicker with-border"
+                            data-size="7"
+                            title="Select Category"
+                          >
+                            <option>Land and Building</option>
+                            <option>Plant and Machinery</option>
+                            <option>Security or Financial Assets</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="submit-field">
+                          <h5>GST Number</h5>
+                          <input
+                            type="text"
+                            class="with-border"
+                            placeholder="e.g. build me a website"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="submit-field">
+                          <h5>Current location</h5>
+                          <select
+                            class="selectpicker with-border"
+                            data-size="7"
+                            title="Select Category"
+                          >
+                            <option>Chennai</option>
+                            <option>Delhi</option>
+                            <option>Mumbai</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="submit-field">
+                          <h5>Preffered location for taking projects</h5>
+                          <select
+                            class="selectpicker with-border"
+                            data-size="7"
+                            title="Select Category"
+                          >
+                            <option>Chennai</option>
+                            <option>Delhi</option>
+                            <option>Mumbai</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <div class="submit-field">
+                          <h5>Address</h5>
+                          <textarea
+                            cols="30"
+                            rows="5"
+                            class="with-border"
+                          ></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Button -->
+              <div class="col-xl-10 offset-xl-1 d-flex flex-row">
+                <!-- <a href="#" class="button ripple-effect big margin-top-30"
+                                  style="background-color: #f7315d"
+
+                  >Save Changes</a
+                > -->
+
+                <a
+                  href="professional"
+                  class="button ripple-effect big margin-top-30"
+                  style="margin-left: auto; background-color: #f7315d"
+                  >Save & Next</a
+                >
+              </div>
+              <!-- Button / End -->
+            </div>
+            <!-- Row / End -->
+
+            <%- include('../../components/footerDashboard') %>
+          </div>
+        </div>
+        <!-- Dashboard Content / End -->
+      </div>
+      <!-- Dashboard Container / End -->
+    </div>
+    <!-- Wrapper / End -->
+
+    <%- include('../../components/scripts') %>
+  </body>
+</html>

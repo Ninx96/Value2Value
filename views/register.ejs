@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./components/head') %>
+
+  <body>
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <%- include('./components/header') %>
+
+      <!-- Titlebar
+================================================== -->
+      <div id="titlebar" class="gradient">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>Register</h2>
+
+              <!-- Breadcrumbs -->
+              <nav id="breadcrumbs" class="dark">
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li>Register</li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page Content
+================================================== -->
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-xl-5"
+            style="
+              background-image: url(/images/register_image.jpg);
+              background-size: 100%;
+              background-repeat: no-repeat;
+            "
+          ></div>
+          <div class="col-xl-5 offset-xl-1">
+            <div class="login-register-page">
+              <!-- Welcome Text -->
+              <div class="welcome-text">
+                <h3 style="font-size: 26px">Let's create your account!</h3>
+                <span
+                  >Already have an account? <a href="login">Log In!</a></span
+                >
+              </div>
+
+              <!-- Form -->
+              <form method="post" id="register-account-form">
+                <div class="input-with-icon-left">
+                  <i class="icon-material-outline-person-pin"></i>
+                  <input
+                    type="text"
+                    class="input-text with-border"
+                    name="emailaddress-register"
+                    id="emailaddress-register"
+                    placeholder="Name"
+                    required
+                  />
+                </div>
+
+                <div class="input-with-icon-left">
+                  <i class="icon-material-baseline-mail-outline"></i>
+                  <input
+                    type="text"
+                    class="input-text with-border"
+                    name="emailaddress-register"
+                    id="emailaddress-register"
+                    placeholder="Email Address"
+                    required
+                  />
+                </div>
+
+                <div
+                  class="input-with-icon-left"
+                  title="Should be at least 8 characters long"
+                  data-tippy-placement="bottom"
+                >
+                  <i class="icon-material-outline-lock"></i>
+                  <input
+                    type="password"
+                    class="input-text with-border"
+                    name="password-register"
+                    id="password-register"
+                    placeholder="Password"
+                    required
+                  />
+                </div>
+
+                <div class="input-with-icon-left">
+                  <i class="icon-material-outline-lock"></i>
+                  <input
+                    type="password"
+                    class="input-text with-border"
+                    name="password-repeat-register"
+                    id="password-repeat-register"
+                    placeholder="Repeat Password"
+                    required
+                  />
+                </div>
+              </form>
+
+              <!-- Account Type -->
+              <div id="acc_type" class="account-type" onclick="show(event)">
+                <div>
+                  <input
+                    type="radio"
+                    name="account-type-radio"
+                    id="freelancer-radio"
+                    class="account-type-radio"
+                    value="work"
+                  />
+                  <label for="freelancer-radio" class="ripple-effect-dark"
+                    ><i class="icon-material-outline-account-circle"></i> I want
+                    to Work</label
+                  >
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="account-type-radio"
+                    id="employer-radio"
+                    class="account-type-radio"
+                    value="hire"
+                  />
+                  <label for="employer-radio" class="ripple-effect-dark"
+                    ><i class="icon-material-outline-business-center"></i> I
+                    want to Hire</label
+                  >
+                </div>
+              </div>
+
+              <!-- User Type -->
+              <div
+                id="user_type"
+                class="account-type mfp-hide"
+                onclick="show(event)"
+              >
+                <div>
+                  <input
+                    type="radio"
+                    name="user-type-radio"
+                    id="individual-radio"
+                    class="account-type-radio"
+                    value="individual"
+                  />
+                  <label for="individual-radio" class="ripple-effect-dark"
+                    ><i class="icon-material-outline-account-circle"></i>
+                    Individual</label
+                  >
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="user-type-radio"
+                    id="entity-radio"
+                    class="account-type-radio"
+                    value="entity"
+                  />
+                  <label for="entity-radio" class="ripple-effect-dark"
+                    ><i class="icon-material-outline-business-center"></i>
+                    Entity / Organisation</label
+                  >
+                </div>
+              </div>
+
+              <!-- Button -->
+
+              <button
+                id="btn_register"
+                class="
+                  button
+                  full-width
+                  button-sliding-icon
+                  ripple-effect
+                  margin-top-10
+                "
+                type="button"
+                form="login-form"
+                style="background-color: #f7315d"
+                onclick="onSubmit();"
+              >
+                Register <i class="icon-material-outline-arrow-right-alt"></i>
+              </button>
+
+              <!-- Social Login -->
+              <div class="social-login-separator"><span>or</span></div>
+              <div class="social-login-buttons">
+                <button class="facebook-login ripple-effect">
+                  <i class="icon-brand-facebook-f"></i> Register via Facebook
+                </button>
+                <button class="google-login ripple-effect">
+                  <i class="icon-brand-google-plus-g"></i> Register via Google+
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spacer -->
+      <div class="margin-top-70"></div>
+      <!-- Spacer / End-->
+
+      <%- include('./components/footer') %>
+    </div>
+    <!-- Wrapper / End -->
+
+    <%- include('./components/scripts') -%>
+    <script>
+      let user_type, acc_type;
+
+      function show(e) {
+        const isChecked = $(e.target).is(":checked");
+        if (isChecked) {
+          $("#user_type").removeClass("mfp-hide");
+          return;
+        }
+      }
+
+      $("#acc_type").on("click", function (e) {
+        acc_type = e.target.value;
+      });
+
+      $("#user_type").on("click", function (e) {
+        user_type = e.target.value;
+      });
+
+      function onSubmit() {
+        if (acc_type == "hire") {
+          window.location = "job-post";
+          return;
+        }
+        if (user_type == "individual") {
+          window.location = "/individual/personal";
+          return;
+        }
+        if (user_type == "entity") {
+          window.location = "/entity/details";
+          return;
+        }
+      }
+    </script>
+  </body>
+</html>
