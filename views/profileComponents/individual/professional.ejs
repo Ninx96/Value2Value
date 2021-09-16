@@ -1,0 +1,320 @@
+<div class="col-xl-10 offset-xl-1">
+  <div class="dashboard-box">
+    <!-- Headline -->
+    <div class="headline">
+      <div class="row" style="padding-inline: 15px">
+        <h3 class="margin-top-10">
+          <i class="icon-material-outline-business-center"></i> Valuation Exams
+          Passed
+        </h3>
+        <a
+          href="#small-dialog-2"
+          class="button ripple-effect popup-with-zoom-anim"
+          style="margin-left: auto; background-color: #f7315d"
+          >Add Examination</a
+        >
+      </div>
+    </div>
+
+    <div class="content">
+      <ul id="ul_exam" class="boxed-list-ul">
+        <li>
+          <div class="boxed-list-item">
+            <!-- Avatar -->
+            <div class="item-image">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Education%2C_Studying%2C_University%2C_Alumni_-_icon.png/600px-Education%2C_Studying%2C_University%2C_Alumni_-_icon.png"
+                alt=""
+              />
+            </div>
+
+            <!-- Content -->
+            <div class="item-content">
+              <h4>Bachelors of Computer Applications</h4>
+              <div class="item-details margin-top-7">
+                <div class="detail-item">
+                  <a href="#"
+                    ><i class="icon-material-outline-date-range"></i> 2020</a
+                  >
+                </div>
+                <div class="detail-item">
+                  <i class="icon-material-outline-assignment"></i> 60% - Grade D
+                </div>
+              </div>
+              <div class="item-description">
+                <p>Indra Gandhi National Open University</p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="col-xl-10 offset-xl-1">
+  <div class="dashboard-box">
+    <!-- Headline -->
+    <div class="headline">
+      <div class="row" style="padding-inline: 15px">
+        <h3 class="margin-top-10">
+          <i class="icon-material-outline-business-center"></i>Valuation
+          Qualification
+        </h3>
+        <a
+          href="#small-dialog-3"
+          class="button ripple-effect popup-with-zoom-anim"
+          style="margin-left: auto; background-color: #f7315d"
+          >Add Qualification</a
+        >
+      </div>
+    </div>
+
+    <div class="content">
+      <ul class="boxed-list">
+        <li>
+          <div class="boxed-list-item">
+            <!-- Avatar -->
+            <div class="item-image">
+              <img
+                src="https://pic.onlinewebfonts.com/svg/img_311588.png"
+                alt=""
+              />
+            </div>
+
+            <!-- Content -->
+            <div class="item-content">
+              <h4>Peofessional</h4>
+              <div class="item-details margin-top-7">
+                <div class="detail-item">
+                  <a href="#"
+                    ><i class="icon-material-outline-date-range"></i> Date of
+                    enroll</a
+                  >
+                </div>
+                <div class="detail-item">
+                  <i class="icon-material-outline-assignment"></i> memership no.
+                </div>
+              </div>
+              <div class="item-description">
+                <p>University</p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Add Education popup
+  ================================================== -->
+<div id="small-dialog-2" class="zoom-anim-dialog mfp-hide dialog-with-tabs">
+  <!--Tabs -->
+  <div class="sign-in-form">
+    <ul class="popup-tabs-nav">
+      <li><a href="#tab">Add Examination</a></li>
+    </ul>
+
+    <div class="popup-tabs-container">
+      <!-- Tab -->
+      <div class="popup-tab-content" id="tab">
+        <!-- Welcome Text -->
+        <div class="welcome-text">
+          <h3>Examination Details</h3>
+        </div>
+
+        <!-- Form -->
+        <form method="post" id="add-note">
+          <div class="row">
+            <div class="col-md-6">
+              <input
+                type="text"
+                class="with-border"
+                placeholder="Date of examination"
+              />
+            </div>
+            <div class="col-md-6">
+              <select
+                class="selectpicker with-border default margin-bottom-20"
+                data-size="7"
+                title="Asset class, if any"
+              >
+                <option>Graduation</option>
+                <option>Post. Graducation</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <input
+                type="text"
+                class="with-border"
+                placeholder="Marks secured"
+              />
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="with-border" placeholder="Percentage" />
+            </div>
+            <div class="col-md-12">
+              <textarea
+                name="textarea"
+                cols="10"
+                placeholder="Remarks, if any"
+                class="with-border"
+              ></textarea>
+            </div>
+          </div>
+        </form>
+
+        <!-- Button -->
+        <button
+          class="button full-width button-sliding-icon ripple-effect"
+          type="submit"
+          form="add-note"
+        >
+          Add Examination <i class="icon-material-outline-arrow-right-alt"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Add Education popup / End -->
+
+<!-- Add Professional popup
+  ================================================== -->
+<div id="small-dialog-3" class="zoom-anim-dialog mfp-hide dialog-with-tabs">
+  <!--Tabs -->
+  <div class="sign-in-form">
+    <ul class="popup-tabs-nav">
+      <li><a href="#tab">Add Valuation Qualification</a></li>
+    </ul>
+
+    <div class="popup-tabs-container">
+      <!-- Tab -->
+      <div class="popup-tab-content" id="tab">
+        <!-- Welcome Text -->
+        <div class="welcome-text">
+          <h3>Valuation Qualification Details</h3>
+        </div>
+
+        <!-- Form -->
+        <form method="post" id="add-note">
+          <div class="row">
+            <div class="col-md-12">
+              <input
+                type="text"
+                class="with-border"
+                placeholder="Valuation specific Qualification/course "
+              />
+            </div>
+            <div class="col-md-12">
+              <input
+                type="text"
+                class="with-border"
+                placeholder="Recognised Registered Valuers Organisation"
+              />
+            </div>
+            <div class="col-md-6">
+              <input
+                type="text"
+                class="with-border"
+                placeholder="Asset class"
+              />
+            </div>
+            <div class="col-md-6">
+              <input
+                type="text"
+                class="with-border"
+                placeholder="RVO Membership	No.	"
+              />
+            </div>
+            <div class="col-md-12">
+              <textarea
+                name="textarea"
+                cols="10"
+                placeholder="Remarks, if any"
+                class="with-border"
+              ></textarea>
+            </div>
+          </div>
+        </form>
+
+        <!-- Button -->
+        <button
+          class="button full-width button-sliding-icon ripple-effect"
+          type="submit"
+          form="add-note"
+        >
+          Add Valuation Qualification
+          <i class="icon-material-outline-arrow-right-alt"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function addValuationEducation(elem) {
+    $("#ul_edu").append(` <li>
+          <div class="boxed-list-item">
+            <!-- Avatar -->
+            <div class="item-image">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Education%2C_Studying%2C_University%2C_Alumni_-_icon.png/600px-Education%2C_Studying%2C_University%2C_Alumni_-_icon.png"
+                alt=""
+              />
+            </div>
+
+            <!-- Content -->
+            <div class="item-content">
+              <h4>Bachelors of Computer Applications</h4>
+              <div class="item-details margin-top-7">
+                <div class="detail-item">
+                  <a href="#"
+                    ><i class="icon-material-outline-date-range"></i> 2020</a
+                  >
+                </div>
+                <div class="detail-item">
+                  <i class="icon-material-outline-assignment"></i> 60% - Grade D
+                </div>
+              </div>
+              <div class="item-description">
+                <p>Indra Gandhi National Open University</p>
+              </div>
+            </div>
+          </div>
+        </li>`);
+  }
+
+  function addValuationProfessional(elem) {
+    $("#ul_prof").append(` <li>
+          <div class="boxed-list-item">
+            <!-- Avatar -->
+            <div class="item-image">
+              <img
+                src="https://pic.onlinewebfonts.com/svg/img_311588.png"
+                alt=""
+              />
+            </div>
+
+            <!-- Content -->
+            <div class="item-content">
+              <h4>Peofessional</h4>
+              <div class="item-details margin-top-7">
+                <div class="detail-item">
+                  <a href="#"
+                    ><i class="icon-material-outline-date-range"></i> Date of
+                    enroll</a
+                  >
+                </div>
+                <div class="detail-item">
+                  <i class="icon-material-outline-assignment"></i> memership no.
+                </div>
+              </div>
+              <div class="item-description">
+                <p>University</p>
+              </div>
+            </div>
+          </div>
+        </li>`);
+  }
+</script>

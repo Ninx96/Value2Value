@@ -1,0 +1,179 @@
+<% let location='/profile?update=personal-details' %>
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./components/head') %>
+  <body class="gray">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <%- include('./components/header') %>
+      <!-- Dashboard Container -->
+      <div class="dashboard-container">
+        <%- include('./components/sidebar') %>
+        <!-- Dashboard Content
+	================================================== -->
+        <div class="dashboard-content-container" data-simplebar>
+          <div class="dashboard-content-inner">
+            <!-- Dashboard Headline -->
+            <div class="dashboard-headline col-xl-10 offset-xl-1">
+              <h3>Tell us about you</h3>
+
+              <!-- Breadcrumbs -->
+              <nav id="breadcrumbs" class="dark">
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Profile</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <!-- Row -->
+            <div class="row">
+              <!-- Dashboard Box -->
+              <div class="col-xl-10 offset-xl-1">
+                <div class="dashboard-box margin-top-0">
+                  <!-- Headline -->
+                  <div class="headline">
+                    <h3>
+                      <i class="icon-material-outline-account-circle"></i> My
+                      Account
+                    </h3>
+                  </div>
+
+                  <div class="content with-padding padding-bottom-0">
+                    <div class="row">
+                      <div class="col-auto">
+                        <div
+                          class="avatar-wrapper"
+                          data-tippy-placement="bottom"
+                          title="Change Avatar"
+                        >
+                          <img
+                            class="profile-pic"
+                            src="images/user-avatar-placeholder.png"
+                            alt=""
+                          />
+                          <div class="upload-button"></div>
+                          <input
+                            class="file-upload"
+                            type="file"
+                            accept="image/*"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="col">
+                        <div class="row">
+                          <div class="col-xl-6">
+                            <div class="submit-field">
+                              <h5>Name</h5>
+                              <input
+                                type="text"
+                                class="with-border"
+                                value="Tom"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="col-xl-6">
+                            <div class="submit-field">
+                              <h5>Email</h5>
+                              <input
+                                type="text"
+                                class="with-border"
+                                value="tom@example.com"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="col-xl-6">
+                            <div class="submit-field">
+                              <h5>Phone</h5>
+                              <input
+                                type="text"
+                                class="with-border"
+                                value="96587456321"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="col-xl-6">
+                            <div class="submit-field">
+                              <h5>Functional area</h5>
+                              <select
+                                class="selectpicker with-border"
+                                data-size="7"
+                                title="Choose a Functional area"
+                              >
+                                <option>
+                                  Accounting / Tax / Company Secretary / Audit
+                                </option>
+                                <option>Agent</option>
+                                <option>
+                                  Medical Professional / Healthcare Practitioner
+                                  / Technician
+                                </option>
+                                <option>HR / Admin / PM / IR / Training</option>
+                                <option>Valuation</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="col-xl-12">
+                            <div class="submit-field">
+                              <h5>Introduce Yourself</h5>
+                              <textarea
+                                cols="30"
+                                rows="3"
+                                class="with-border"
+                              ></textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Personal Box -->
+              <% if (show > 0 || showAll) { %> <%-
+              include('./profileComponents/individual/personal') %> <%
+              location='/profile?update=educational-details' %> <% } %>
+
+              <!-- Educational Box -->
+              <% if (show > 1 || showAll) { %> <%-
+              include('./profileComponents/individual/educational') %> <%
+              location='/profile?update=professional-details' %> <% } %>
+
+              <!-- Professional Box -->
+              <% if (show > 2 || showAll) { %> <%-
+              include('./profileComponents/individual/professional') %> <%
+              location='/profile?update=work-details' %> <% } %>
+
+              <!-- Work Details Box -->
+              <% if (show > 3 || showAll) { %> <%-
+              include('./profileComponents/individual/work') %> <% } %>
+
+              <!-- Button -->
+              <div class="col-xl-10 offset-xl-1">
+                <a
+                  href="<%= location %> "
+                  class="button ripple-effect big margin-top-30"
+                  >Save Changes</a
+                >
+              </div>
+            </div>
+            <!-- Row / End -->
+
+            <%- include('./components/footerDashboard') %>
+          </div>
+        </div>
+        <!-- Dashboard Content / End -->
+      </div>
+      <!-- Dashboard Container / End -->
+    </div>
+    <!-- Wrapper / End -->
+
+    <%- include('./components/scripts') %>
+  </body>
+</html>

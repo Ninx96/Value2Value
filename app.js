@@ -4,6 +4,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var session = require("express-session");
 var logger = require("morgan");
+var flash = require("connect-flash");
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
 
@@ -46,6 +47,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(flash());
 app.use(
   session({
     resave: false, // don't save session if unmodified

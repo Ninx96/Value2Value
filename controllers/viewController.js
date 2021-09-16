@@ -1,17 +1,32 @@
+const { json } = require("express");
 const User = require("../models/userModel");
 
 /* index controllers */
 exports.getIndex = (req, res, next) => {
-  res.render("index");
+  if (req.session.isAuth) {
+    return res.redirect("/dashboard");
+  }
+  res.render("index", { login: req.flash("message") });
 };
 
 /* register controllers */
+
 exports.getRegister = (req, res, next) => {
-  res.render("register");
+  res.render("register", { message: req.flash("message") });
 };
 
 exports.postRegister = async (req, res, next) => {
   const session = req.session;
+
+  const user = await User.findOne({ email: req.body.email }).catch(
+    (err) => null
+  );
+
+  if (user) {
+    req.flash("message", "Email is already registered");
+    return res.redirect("/register");
+  }
+
   const newUser = await User.create({
     email: req.body.email,
     password: req.body.password,
@@ -19,27 +34,59 @@ exports.postRegister = async (req, res, next) => {
   }).catch((err) => null);
 
   if (newUser) {
-    res.status(200).json({
-      status: 1,
-      message: "Signed Up Successfull! Please Verify your Email",
-      user: newUser,
-    });
+    return res.redirect("/login");
   }
 
-  res.status(200).json({
-    status: 0,
-    message: "Could not create the user",
-    user: newUser,
-    session: session,
-  });
+  req.flash("message", "Could not register the user, try after some time");
+  res.redirect("/register");
 };
 
 /* login controllers */
 exports.getLogin = (req, res, next) => {
-  res.render("login");
+  res.render("login", { message: req.flash("message") });
+};
+
+exports.postLogin = async (req, res, next) => {
+  const session = req.session;
+  const user = await User.findOne({ email: req.body.email })
+    .select("+password")
+    .catch((err) => null);
+
+  if (user) {
+    if (user.password == req.body.password) {
+      req.session.isAuth = true;
+      return res.redirect("/dashboard");
+    }
+    req.flash("message", "Incorrect Email or Password");
+    return res.redirect("/login");
+  }
+
+  req.flash("message", "Email is not registered");
+  res.redirect("/login");
 };
 
 /* ******************** Private Screens ********************* */
+
+/* Profile controllers */
+exports.getProfile = (req, res, next) => {
+  const arrMenu = [
+    "profile",
+    "personal-details",
+    "educational-details",
+    "professional-details",
+    "work-details",
+  ];
+  const show = arrMenu.indexOf(req.query.update);
+  console.log(show);
+  let showAll = false;
+  if (req.query.view) {
+    showAll = true;
+  }
+  res.render("userProfile", {
+    show,
+    showAll,
+  });
+};
 
 /* Dashboard controllers */
 exports.getDashboard = (req, res, next) => {
@@ -47,6 +94,11 @@ exports.getDashboard = (req, res, next) => {
 };
 
 /* Post Job controllers */
+
+exports.getJobCategory = (req, res, next) => {
+  res.render("jobCategory");
+};
+
 exports.getJobPost = (req, res, next) => {
   res.render("jobPost");
 };

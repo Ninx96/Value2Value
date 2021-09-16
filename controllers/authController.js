@@ -3,12 +3,12 @@ exports.authSession = (req, res, next) => {
     next();
     return;
   }
-  res.redirect("/login");
+  res.redirect("/");
 };
 
 exports.closeSession = (req, res, next) => {
   req.session.destroy((err) => {
     if (err) throw err;
-    res.redirect("/");
   });
+  res.redirect("/");
 };

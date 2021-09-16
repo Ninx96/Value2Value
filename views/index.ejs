@@ -1,11 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('./components/head') %>
-
   <body>
     <!-- Wrapper -->
     <div id="wrapper">
-      <%- include('./components/header') %>
+      <!-- Header Container
+================================================== -->
+      <header id="header-container" class="fullwidth transparent">
+        <!-- Header -->
+        <div id="header">
+          <div class="container">
+            <!-- Left Side Content -->
+            <div class="left-side">
+              <!-- Logo -->
+              <div id="logo">
+                <a href="index.html"><img src="images/logo.png" alt="" /></a>
+              </div>
+
+              <!-- Main Navigation -->
+              <nav id="navigation">
+                <ul id="responsive"></ul>
+              </nav>
+              <div class="clearfix"></div>
+              <!-- Main Navigation / End -->
+            </div>
+            <!-- Left Side Content / End -->
+
+            <!-- Right Side Content / End -->
+            <div class="right-side">
+              <div class="header-widget">
+                <a id="btn_login" href="/login" class="log-in-button"
+                  ><i class="icon-feather-log-in"></i>
+                  <span>Log In / Register</span></a
+                >
+              </div>
+
+              <!-- Mobile Navigation Button -->
+              <span class="mmenu-trigger">
+                <button class="hamburger hamburger--collapse" type="button">
+                  <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                  </span>
+                </button>
+              </span>
+            </div>
+            <!-- Right Side Content / End -->
+          </div>
+        </div>
+        <!-- Header / End -->
+      </header>
+      <div class="clearfix"></div>
+      <!-- Header Container / End -->
 
       <!-- Intro Banner
 ================================================== -->
@@ -21,8 +66,8 @@
               <div class="banner-headline">
                 <h3>
                   <strong
-                    >Hire experts or be hired for any job, any time.</strong
-                  >
+                    >Hire experts or be hired for any job, any time.
+                  </strong>
                   <br />
                   <span
                     >Thousands of small businesses use

@@ -1,7 +1,10 @@
 var express = require("express");
 var router = express.Router();
+const { check, validationResult } = require("express-validator");
+
 const viewContoller = require("../controllers/viewController");
 const authContoller = require("../controllers/authController");
+const { get } = require("mongoose");
 
 /* GET home page. */
 router.get("/", viewContoller.getIndex);
@@ -13,8 +16,10 @@ router
   .post(viewContoller.postRegister);
 
 /* Login page. */
-router.get("/login", viewContoller.getLogin);
-//.post(viewContoller.postRegister);
+router
+  .route("/login")
+  .get(viewContoller.getLogin)
+  .post(viewContoller.postLogin);
 
 /* Logout session. */
 router.get("/logout", authContoller.closeSession);
@@ -22,7 +27,10 @@ router.get("/logout", authContoller.closeSession);
 /* ********** Private Pages. *********** */
 
 /* Dashboard page. */
-router.get("/dashboard", viewContoller.getDashboard);
+router.get("/dashboard", authContoller.authSession, viewContoller.getDashboard);
+
+/* Job Category page. */
+router.get("/job-category", viewContoller.getJobCategory);
 
 /* Job Post page. */
 router.get("/job-post", viewContoller.getJobPost);
@@ -52,5 +60,9 @@ router.get("/entity/professional", viewContoller.getEntityProfessionalDetails);
 router.get("/entity/valuation", viewContoller.getEntityValuationDetails);
 
 router.get("/entity/work", viewContoller.getEntityWorkDetails);
+
+/* ********** Update Entity profile. *********** */
+
+router.get("/profile", viewContoller.getProfile);
 
 module.exports = router;

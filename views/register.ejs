@@ -5,8 +5,53 @@
   <body>
     <!-- Wrapper -->
     <div id="wrapper">
-      <%- include('./components/header') %>
+      <!-- Header Container
+================================================== -->
+      <header id="header-container" class="fullwidth transparent">
+        <!-- Header -->
+        <div id="header">
+          <div class="container">
+            <!-- Left Side Content -->
+            <div class="left-side">
+              <!-- Logo -->
+              <div id="logo">
+                <a href="index.html"><img src="images/logo.png" alt="" /></a>
+              </div>
 
+              <!-- Main Navigation -->
+              <nav id="navigation">
+                <ul id="responsive"></ul>
+              </nav>
+              <div class="clearfix"></div>
+              <!-- Main Navigation / End -->
+            </div>
+            <!-- Left Side Content / End -->
+
+            <!-- Right Side Content / End -->
+            <div class="right-side">
+              <div class="header-widget">
+                <a href="/register" class="log-in-button"
+                  ><i class="icon-feather-log-in"></i>
+                  <span>Log In / Register</span></a
+                >
+              </div>
+
+              <!-- Mobile Navigation Button -->
+              <span class="mmenu-trigger">
+                <button class="hamburger hamburger--collapse" type="button">
+                  <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                  </span>
+                </button>
+              </span>
+            </div>
+            <!-- Right Side Content / End -->
+          </div>
+        </div>
+        <!-- Header / End -->
+      </header>
+      <div class="clearfix"></div>
+      <!-- Header Container / End -->
       <!-- Titlebar
 ================================================== -->
       <div id="titlebar" class="gradient">
@@ -50,14 +95,18 @@
               </div>
 
               <!-- Form -->
-              <form method="post" id="register-account-form">
+              <form
+                method="post"
+                id="register-account-form"
+                class="margin-bottom-20"
+              >
                 <div class="input-with-icon-left">
                   <i class="icon-material-outline-person-pin"></i>
                   <input
                     type="text"
                     class="input-text with-border"
-                    name="emailaddress-register"
-                    id="emailaddress-register"
+                    name="name"
+                    id="txt_name"
                     placeholder="Name"
                     required
                   />
@@ -68,8 +117,8 @@
                   <input
                     type="text"
                     class="input-text with-border"
-                    name="emailaddress-register"
-                    id="emailaddress-register"
+                    name="email"
+                    id="txt_email"
                     placeholder="Email Address"
                     required
                   />
@@ -84,8 +133,8 @@
                   <input
                     type="password"
                     class="input-text with-border"
-                    name="password-register"
-                    id="password-register"
+                    name="password"
+                    id="txt_password"
                     placeholder="Password"
                     required
                   />
@@ -94,81 +143,88 @@
                 <div class="input-with-icon-left">
                   <i class="icon-material-outline-lock"></i>
                   <input
-                    type="password"
+                    type="password_repeat"
                     class="input-text with-border"
-                    name="password-repeat-register"
-                    id="password-repeat-register"
+                    name="passwordRepeat"
+                    id="txt_password_repeat"
                     placeholder="Repeat Password"
                     required
                   />
                 </div>
+
+                <!-- Account Type -->
+                <div id="acc_type" class="account-type" onclick="show(event)">
+                  <div>
+                    <input
+                      type="radio"
+                      name="accountType"
+                      id="freelancer-radio"
+                      class="account-type-radio"
+                      value="work"
+                    />
+                    <label for="freelancer-radio" class="ripple-effect-dark"
+                      ><i class="icon-material-outline-account-circle"></i> I
+                      want to Work</label
+                    >
+                  </div>
+
+                  <div>
+                    <input
+                      type="radio"
+                      name="accountType"
+                      id="employer-radio"
+                      class="account-type-radio"
+                      value="hire"
+                    />
+                    <label for="employer-radio" class="ripple-effect-dark"
+                      ><i class="icon-material-outline-business-center"></i> I
+                      want to Hire</label
+                    >
+                  </div>
+                </div>
+
+                <!-- User Type -->
+                <div
+                  id="user_type"
+                  class="account-type mfp-hide"
+                  onclick="show(event)"
+                >
+                  <div>
+                    <input
+                      type="radio"
+                      name="userType"
+                      id="individual-radio"
+                      class="account-type-radio"
+                      value="individual"
+                    />
+                    <label for="individual-radio" class="ripple-effect-dark"
+                      ><i class="icon-material-outline-account-circle"></i> As
+                      Individual</label
+                    >
+                  </div>
+
+                  <div>
+                    <input
+                      type="radio"
+                      name="userType"
+                      id="entity-radio"
+                      class="account-type-radio"
+                      value="entity"
+                    />
+                    <label for="entity-radio" class="ripple-effect-dark"
+                      ><i class="icon-material-outline-business-center"></i> As
+                      Entity / Organisation</label
+                    >
+                  </div>
+                </div>
               </form>
 
-              <!-- Account Type -->
-              <div id="acc_type" class="account-type" onclick="show(event)">
-                <div>
-                  <input
-                    type="radio"
-                    name="account-type-radio"
-                    id="freelancer-radio"
-                    class="account-type-radio"
-                    value="work"
-                  />
-                  <label for="freelancer-radio" class="ripple-effect-dark"
-                    ><i class="icon-material-outline-account-circle"></i> I want
-                    to Work</label
-                  >
-                </div>
-
-                <div>
-                  <input
-                    type="radio"
-                    name="account-type-radio"
-                    id="employer-radio"
-                    class="account-type-radio"
-                    value="hire"
-                  />
-                  <label for="employer-radio" class="ripple-effect-dark"
-                    ><i class="icon-material-outline-business-center"></i> I
-                    want to Hire</label
-                  >
-                </div>
+              <% if (message.length) { %>
+              <div class="notification error closeable">
+                <p><%= message %></p>
+                <a class="close" href="#"></a>
               </div>
-
-              <!-- User Type -->
-              <div
-                id="user_type"
-                class="account-type mfp-hide"
-                onclick="show(event)"
-              >
-                <div>
-                  <input
-                    type="radio"
-                    name="user-type-radio"
-                    id="individual-radio"
-                    class="account-type-radio"
-                    value="individual"
-                  />
-                  <label for="individual-radio" class="ripple-effect-dark"
-                    ><i class="icon-material-outline-account-circle"></i>
-                    Individual</label
-                  >
-                </div>
-
-                <div>
-                  <input
-                    type="radio"
-                    name="user-type-radio"
-                    id="entity-radio"
-                    class="account-type-radio"
-                    value="entity"
-                  />
-                  <label for="entity-radio" class="ripple-effect-dark"
-                    ><i class="icon-material-outline-business-center"></i>
-                    Entity / Organisation</label
-                  >
-                </div>
-              </div>
+              <% } %>
 
               <!-- Button -->
 
@@ -181,10 +237,9 @@
                   ripple-effect
                   margin-top-10
                 "
-                type="button"
-                form="login-form"
+                type="submit"
+                form="register-account-form"
                 style="background-color: #f7315d"
-                onclick="onSubmit();"
               >
                 Register <i class="icon-material-outline-arrow-right-alt"></i>
               </button>
